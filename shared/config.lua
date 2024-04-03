@@ -1,14 +1,14 @@
 Config = Config or {}
 
-Config.Fuel = "ps-fuel"        -- "ps-fuel", "LegacyFuel", "ox_fuel"
-Config.ResourcePerms = 'admin' -- permission to control resource(start stop restart)
-Config.ShowCommandsPerms = 'admin' -- permission to show all commands
-Config.RenewedPhone = false    -- if you use qb-phone from renewed. (multijob)
+Config.Fuel = "initial_fuel"       -- "ps-fuel", "LegacyFuel", "ox_fuel"
+Config.ResourcePerms = 'developer' -- permission to control resource(start stop restart)
+Config.ShowCommandsPerms = 'staff' -- permission to show all commands
+Config.RenewedPhone = false        -- if you use qb-phone from renewed. (multijob)
 
 -- Key Bindings
 Config.Keybindings = true
-Config.AdminKey = "PageDown"
-Config.NoclipKey = "PageUp"
+Config.AdminKey = "F9"
+Config.NoclipKey = "F10"
 
 -- Give Car
 Config.DefaultGarage = "Alta Garage"
@@ -18,12 +18,12 @@ Config.Actions = {
         label = "Admin Car",
         type = "client",
         event = "ps-adminmenu:client:Admincar",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["ban_player"] = {
         label = "Ban Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player", option = "dropdown", data = "players" },
             { label = "Reason", option = "text" },
@@ -49,7 +49,7 @@ Config.Actions = {
 
     ["bring_player"] = {
         label = "Bring Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:BringPlayer" },
@@ -58,7 +58,7 @@ Config.Actions = {
 
     ["change_weather"] = {
         label = "Change Weather",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             {
                 label = "Weather",
@@ -87,7 +87,7 @@ Config.Actions = {
 
     ["change_time"] = {
         label = "Change Time",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             {
                 label = "Time Events",
@@ -107,7 +107,7 @@ Config.Actions = {
 
     ["change_plate"] = {
         label = "Change Plate",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Plate",   option = "text" },
             { label = "Confirm", option = "button", type = "client", event = "ps-adminmenu:client:ChangePlate" },
@@ -116,7 +116,7 @@ Config.Actions = {
 
     ["clear_inventory"] = {
         label = "Clear Inventory",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:ClearInventory" },
@@ -125,7 +125,7 @@ Config.Actions = {
 
     ["clear_inventory_offline"] = {
         label = "Clear Inventory Offline",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Citizen ID", option = "text",   data = "players" },
             { label = "Confirm",    option = "button", type = "server", event = "ps-adminmenu:server:ClearInventoryOffline" },
@@ -134,7 +134,7 @@ Config.Actions = {
 
     ["clothing_menu"] = {
         label = "Give Clothing Menu",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:ClothingMenu" },
@@ -143,7 +143,7 @@ Config.Actions = {
 
     ["set_ped"] = {
         label = "Set Ped",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",     option = "dropdown", data = "players" },
             { label = "Ped Models", option = "dropdown", data = "pedlist" },
@@ -153,7 +153,7 @@ Config.Actions = {
 
     ["copy_coords"] = {
         label = "Copy Coords",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             {
                 label = "Copy Coords",
@@ -161,11 +161,11 @@ Config.Actions = {
                 data = {
                     { label = "Copy Vector2", value = "vector2" },
                     { label = "Copy Vector3", value = "vector3" },
-                    { label = "Copy Vector4",    value = "vector4" },
-                    { label = "Copy Heading",  value = "heading" },
+                    { label = "Copy Vector4", value = "vector4" },
+                    { label = "Copy Heading", value = "heading" },
                 },
             },
-            { label = "Copy to Clipboard", option = "button", type = "client", event = "ps-adminmenu:client:copyToClipboard"},
+            { label = "Copy to Clipboard", option = "button", type = "client", event = "ps-adminmenu:client:copyToClipboard" },
         },
     },
 
@@ -173,12 +173,12 @@ Config.Actions = {
         label = "Delete Vehicle",
         type = "command",
         event = "dv",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["freeze_player"] = {
         label = "Freeze Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:FreezePlayer" },
@@ -187,7 +187,7 @@ Config.Actions = {
 
     ["drunk_player"] = {
         label = "Make Player Drunk",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:DrunkPlayer" },
@@ -196,7 +196,7 @@ Config.Actions = {
 
     ["remove_stress"] = {
         label = "Remove Stress",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player (Optional)", option = "dropdown", data = "players" },
             { label = "Confirm",           option = "button",   type = "server", event = "ps-adminmenu:server:RemoveStress" },
@@ -205,32 +205,32 @@ Config.Actions = {
 
     ["set_ammo"] = {
         label = "Set Ammo",
-        perms = "admin",
+        perms = "staff",
         dropdown = {
             { label = "Ammo Ammount", option = "text" },
             { label = "Confirm",      option = "button", type = "client", event = "ps-adminmenu:client:SetAmmo" },
         },
     },
 
-    -- ["nui_focus"] = {
-    --     label = "Give NUI Focus",
-    --     perms = "mod",
-    --     dropdown = {
-    --         { label = "Player",  option = "dropdown", data = "players" },
-    --         { label = "Confirm", option = "button",   type = "client", event = "" },
-    --     },
-    -- },
+    ["nui_focus"] = {
+        label = "Give NUI Focus",
+        perms = "staff",
+        dropdown = {
+            { label = "Player",  option = "dropdown", data = "players" },
+            { label = "Confirm", option = "button",   type = "client", event = "" },
+        },
+    },
 
     ["god_mode"] = {
         label = "God Mode",
         type = "client",
         event = "ps-adminmenu:client:ToggleGodmode",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["give_car"] = {
         label = "Give Car",
-        perms = "admin",
+        perms = "staff",
         dropdown = {
             { label = "Vehicle",           option = "dropdown", data = "vehicles" },
             { label = "Player",            option = "dropdown", data = "players" },
@@ -244,33 +244,33 @@ Config.Actions = {
         label = "Invisible",
         type = "client",
         event = "ps-adminmenu:client:ToggleInvisible",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["blackout"] = {
         label = "Toggle Blackout",
         type = "server",
         event = "ps-adminmenu:server:ToggleBlackout",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["toggle_duty"] = {
         label = "Toggle Duty",
         type = "server",
         event = "QBCore:ToggleDuty",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["toggle_laser"] = {
         label = "Toggle Laser",
         type = "client",
         event = "ps-adminmenu:client:ToggleLaser",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["set_perms"] = {
         label = "Set Perms",
-        perms = "admin",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             {
@@ -288,7 +288,7 @@ Config.Actions = {
 
     ["set_bucket"] = {
         label = "Set Routing Bucket",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Bucket",  option = "text" },
@@ -298,7 +298,7 @@ Config.Actions = {
 
     ["get_bucket"] = {
         label = "Get Routing Bucket",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:GetBucket" },
@@ -307,7 +307,7 @@ Config.Actions = {
 
     ["mute_player"] = {
         label = "Mute Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "client", event = "ps-adminmenu:client:MutePlayer" },
@@ -318,12 +318,12 @@ Config.Actions = {
         label = "Noclip",
         type = "client",
         event = "ps-adminmenu:client:ToggleNoClip",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["open_inventory"] = {
         label = "Open Inventory",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "client", event = "ps-adminmenu:client:openInventory" },
@@ -332,7 +332,7 @@ Config.Actions = {
 
     ["open_stash"] = {
         label = "Open Stash",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Stash",   option = "text" },
             { label = "Confirm", option = "button", type = "client", event = "ps-adminmenu:client:openStash" },
@@ -341,7 +341,7 @@ Config.Actions = {
 
     ["open_trunk"] = {
         label = "Open Trunk",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Plate",   option = "text" },
             { label = "Confirm", option = "button", type = "client", event = "ps-adminmenu:client:openTrunk" },
@@ -350,7 +350,7 @@ Config.Actions = {
 
     ["change_vehicle_state"] = {
         label = "Set Vehicle Garage State",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Plate",   option = "text" },
             {
@@ -369,12 +369,12 @@ Config.Actions = {
         label = "Revive All",
         type = "server",
         event = "ps-adminmenu:server:ReviveAll",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["revive_player"] = {
         label = "Revive Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:Revive" },
@@ -385,19 +385,19 @@ Config.Actions = {
         label = "Revive Radius",
         type = "server",
         event = "ps-adminmenu:server:ReviveRadius",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["refuel_vehicle"] = {
         label = "Refuel Vehicle",
         type = "client",
         event = "ps-adminmenu:client:RefuelVehicle",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["set_job"] = {
         label = "Set Job",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Job",     option = "dropdown", data = "jobs" },
@@ -408,7 +408,7 @@ Config.Actions = {
 
     ["set_gang"] = {
         label = "Set Gang",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Gang",    option = "dropdown", data = "gangs" },
@@ -419,7 +419,7 @@ Config.Actions = {
 
     ["give_money"] = {
         label = "Give Money",
-        perms = "admin",
+        perms = "staff",
         dropdown = {
             { label = "Player", option = "dropdown", data = "players" },
             { label = "Amount", option = "text" },
@@ -438,7 +438,7 @@ Config.Actions = {
 
     ["give_money_all"] = {
         label = "Give Money to All",
-        perms = "admin",
+        perms = "staff",
         dropdown = {
             { label = "Amount",  option = "text" },
             {
@@ -456,7 +456,7 @@ Config.Actions = {
 
     ["remove_money"] = {
         label = "Remove Money",
-        perms = "admin",
+        perms = "staff",
         dropdown = {
             { label = "Player", option = "dropdown", data = "players" },
             { label = "Amount", option = "text" },
@@ -474,7 +474,7 @@ Config.Actions = {
 
     ["give_item"] = {
         label = "Give Item",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Item",    option = "dropdown", data = "items" },
@@ -485,7 +485,7 @@ Config.Actions = {
 
     ["give_item_all"] = {
         label = "Give Item to All",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Item",    option = "dropdown", data = "items" },
             { label = "Amount",  option = "text" },
@@ -495,7 +495,7 @@ Config.Actions = {
 
     ["spawn_vehicle"] = {
         label = "Spawn Vehicle",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Vehicle", option = "dropdown", data = "vehicles" },
             { label = "Confirm", option = "button",   type = "client",  event = "ps-adminmenu:client:SpawnVehicle" },
@@ -506,12 +506,12 @@ Config.Actions = {
         label = "Fix Vehicle",
         type = "command",
         event = "fix",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["fix_vehicle_for"] = {
         label = "Fix Vehicle for player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:FixVehFor" },
@@ -520,7 +520,7 @@ Config.Actions = {
 
     ["spectate_player"] = {
         label = "Spectate Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:SpectateTarget" },
@@ -529,7 +529,7 @@ Config.Actions = {
 
     ["telport_to_player"] = {
         label = "Teleport to Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:TeleportToPlayer" },
@@ -538,7 +538,7 @@ Config.Actions = {
 
     ["telport_to_coords"] = {
         label = "Teleport to Coords",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Coords",  option = "text" },
             { label = "Confirm", option = "button", type = "client", event = "ps-adminmenu:client:TeleportToCoords" },
@@ -547,7 +547,7 @@ Config.Actions = {
 
     ["teleport_to_location"] = {
         label = "Teleport to Location",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Location", option = "dropdown", data = "locations" },
             { label = "Confirm",  option = "button",   type = "client",   event = "ps-adminmenu:client:TeleportToLocation" },
@@ -558,47 +558,47 @@ Config.Actions = {
         label = "Teleport to Marker",
         type = "command",
         event = "tpm",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["teleport_back"] = {
         label = "Teleport Back",
         type = "client",
         event = "ps-adminmenu:client:TeleportBack",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["vehicle_dev"] = {
         label = "Vehicle Dev Menu",
         type = "client",
         event = "ps-adminmenu:client:ToggleVehDevMenu",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["toggle_coords"] = {
         label = "Toggle Coords",
         type = "client",
         event = "ps-adminmenu:client:ToggleCoords",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["toggle_blips"] = {
         label = "Toggle Blips",
         type = "client",
         event = "ps-adminmenu:client:toggleBlips",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["toggle_names"] = {
         label = "Toggle Names",
         type = "client",
         event = "ps-adminmenu:client:toggleNames",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["toggle_cuffs"] = {
         label = "Toggle Cuffs",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Confirm", option = "button",   type = "server", event = "ps-adminmenu:server:CuffPlayer" },
@@ -609,12 +609,12 @@ Config.Actions = {
         label = "Max Vehicle Mods",
         type = "client",
         event = "ps-adminmenu:client:maxmodVehicle",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["warn_player"] = {
         label = "Warn Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Reason",  option = "text" },
@@ -626,12 +626,12 @@ Config.Actions = {
         label = "Infinite Ammo",
         type = "client",
         event = "ps-adminmenu:client:setInfiniteAmmo",
-        perms = "mod",
+        perms = "staff",
     },
 
     ["kick_player"] = {
         label = "Kick Player",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",  option = "dropdown", data = "players" },
             { label = "Reason",  option = "text" },
@@ -642,7 +642,7 @@ Config.Actions = {
 
     ["play_sound"] = {
         label = "Play Sound",
-        perms = "mod",
+        perms = "staff",
         dropdown = {
             { label = "Player",     option = "dropdown", data = "players" },
             {
@@ -664,36 +664,36 @@ Config.PlayerActions = {
         label = "Teleport to Player",
         type = "server",
         event = "ps-adminmenu:server:TeleportToPlayer",
-        perms = "mod",
+        perms = "staff",
     },
     ["bringPlayer"] = {
         label = "Bring Player",
         type = "server",
         event = "ps-adminmenu:server:BringPlayer",
-        perms = "mod",
+        perms = "staff",
     },
     ["revivePlayer"] = {
         label = "Revive Player",
         event = "ps-adminmenu:server:Revive",
-        perms = "mod",
+        perms = "staff",
         type = "server"
     },
     ["spawnPersonalVehicle"] = {
         label = "Spawn Personal Vehicle",
         event = "ps-adminmenu:client:SpawnPersonalVehicle",
-        perms = "mod",
+        perms = "staff",
         type = "client"
     },
     ["banPlayer"] = {
         label = "Ban Player",
         event = "ps-adminmenu:server:BanPlayer",
-        perms = "mod",
+        perms = "staff",
         type = "server"
     },
     ["kickPlayer"] = {
         label = "Kick Player",
         event = "ps-adminmenu:server:KickPlayer",
-        perms = "mod",
+        perms = "staff",
         type = "server"
     }
 }
@@ -702,7 +702,7 @@ Config.OtherActions = {
     ["toggleDevmode"] = {
         type = "client",
         event = "ps-adminmenu:client:ToggleDev",
-        perms = "admin",
+        perms = "staff",
         label = "Toggle Devmode"
     }
 }

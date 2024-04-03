@@ -10,9 +10,15 @@ RegisterNetEvent('ps-adminmenu:server:BanPlayer', function(data, selectedData)
     local banTime = tonumber(os.time() + time)
     local timeTable = os.date('*t', banTime)
 
-    MySQL.insert('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (?, ?, ?, ?, ?, ?, ?)',
-        { GetPlayerName(player), QBCore.Functions.GetIdentifier(player, 'license'), QBCore.Functions.GetIdentifier(
-            player, 'discord'), QBCore.Functions.GetIdentifier(player, 'ip'), reason, banTime, GetPlayerName(source) })
+    MySQL.insert('INSERT INTO bans (name, license, discord, ip, reason, expire, bannedby) VALUES (?, ?, ?, ?, ?, ?, ?)', {
+        GetPlayerName(player),
+        QBCore.Functions.GetIdentifier(player, 'license'),
+        QBCore.Functions.GetIdentifier(player, 'discord'),
+        QBCore.Functions.GetIdentifier(player, 'ip'),
+        reason,
+        banTime,
+        GetPlayerName(source)
+    })
 
     if time == 2147483647 then
         DropPlayer(player, locale("banned") .. '\n' .. locale("reason") .. reason .. locale("ban_perm"))
